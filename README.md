@@ -1,52 +1,46 @@
-# pppXray
-**作用：**
+# Xray_1.9.11高级版+Xray批量主动扫描
 
-Xray批量化自动扫描
+## 简述
 
-**使用方法：**
-
-一，在target.txt里按行放置待扫描URL，如图：
-
-![](https://github.com/Cl0udG0d/pppXray/blob/main/images/screen2.png)
-
-二，将Xray所在文件夹配置到电脑环境变量里
-
-三，然后运行pppXray.py即可
-
-**运行截图：**
-
-![](https://github.com/Cl0udG0d/pppXray/blob/main/images/screen.png)
-
-关于[Xray高级版破解](https://www.cnblogs.com/Cl0ud/p/13884206.html)
+1. 在pppXray大佬实现Xray批量主动扫描的基础上修改脚本实现扫描时是否开启爬虫功能
+2. Xray_1.9.11社区版的高级版（破解版）
 
 
 
-### 2021/2/20更新
+## 1.配置环境
 
-添加命令行参数与自定义`xray`插件用法，可通过 `--help`查看
-
-![](https://github.com/Cl0udG0d/pppXray/blob/main/images/screen3.png)
-
-`-r,--readfile`参数指定批量读取文件名，默认文件名为`target.txt`
-
-![](https://github.com/Cl0udG0d/pppXray/blob/main/images/screen4.png)
-
-`--plugins`参数指定xray插件
-
-如图：
-
-输入 `python3 pppXray.py --plugins cmd_injection -r target.txt`，使用注入插件进行检测
-
-![](https://github.com/Cl0udG0d/pppXray/blob/main/images/screen5.png)
+```python
+pip install -r requirements.txt
+```
 
 
 
-### 2021/5/5更新
+## 2.批量扫描时是否开启爬虫
 
-看到了黑白某道的公众号文章，这么菜的脚本也能水文章了，xs
+在对站点进行批量扫描时，修改pppXray.py脚本中红框部分命令，实现爬虫功能的开启/关闭
 
-但为了方便初学安全的小伙伴更方便使用`xray`，参考之前[花溪九尾](https://github.com/Cl0udG0d/HXnineTails)的经验，在脚本中兼容专业版和社区版，以及添加分类的功能，大伙儿就不用点开每个漏洞报告看了，因为有部分类型的漏洞会被忽略，节省查看报告时间
+```py
+#扫描URL，不使用爬虫
+xray.exe webscan {} --url {} --html-output {}\\{}.html
 
-使用前记得`pip install -r requirements.txt` （没科学上网的自主换源）
+#扫描URL，使用爬虫，并且对爬虫爬取的页面进行扫描
+xray.exe webscan {} --basic-crawler {} --html-output {}\\{}.html
+```
 
-![](https://github.com/Cl0udG0d/pppXray/blob/main/images/screen6.png)
+![9e1891ed-e4a6-4ca9-83f2-e5f3ba067ab8](D:\Tools\Xray\xray_1.9.11\images\9e1891ed-e4a6-4ca9-83f2-e5f3ba067ab8.png)
+
+## 3.批量扫描执行
+
+将URL放入target.txt中，执行下面命令即可实现批量扫描
+
+```
+python .\pppXray.py -r target.txt
+```
+
+
+
+## 4.其他用法参考
+
+[Cl0udG0d/pppXray: Xray批量化自动扫描 (github.com)](https://github.com/Cl0udG0d/pppXray)
+
+[chaitin/xray: 一款完善的安全评估工具，支持常见 web 安全问题扫描和自定义 poc | 使用之前务必先阅读文档 (github.com)](https://github.com/chaitin/xray)
