@@ -94,7 +94,7 @@ def assortReport():
 
 
 def xrayScan(targeturl,outputfilename="test"):
-    scanCommand = "xray.exe webscan {} --basic-crawler {} --html-output {}\\{}.html".format('--plugins {}'.format(config.plugins) if config.plugins else '',targeturl, config.saveDir,
+    scanCommand = "xray.exe webscan {} --url {} --html-output {}\\{}.html".format('--plugins {}'.format(config.plugins) if config.plugins else '',targeturl, config.saveDir,
                                                                                          outputfilename)
     print(scanCommand)
     os.system(scanCommand)

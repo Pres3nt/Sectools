@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ## 2.批量扫描时是否开启爬虫
 
-在对站点进行批量扫描时，修改pppXray.py脚本中红框部分命令，实现爬虫功能的开启/关闭
+在对站点进行批量扫描时，修改pppXray.py脚本中红框部分命令，实现爬虫功能的开启/关闭（默认为只扫描URL）
 
 ```py
 #扫描URL，不使用爬虫
@@ -27,7 +27,7 @@ xray.exe webscan {} --url {} --html-output {}\\{}.html
 xray.exe webscan {} --basic-crawler {} --html-output {}\\{}.html
 ```
 
-![9e1891ed-e4a6-4ca9-83f2-e5f3ba067ab8](D:\Tools\Xray\xray_1.9.11\images\9e1891ed-e4a6-4ca9-83f2-e5f3ba067ab8.png)
+![9e1891ed-e4a6-4ca9-83f2-e5f3ba067ab8](https://cdn.jsdelivr.net/gh/Pres3nt/Typoraimages@master/images/202410140031827.png)
 
 ## 3.批量扫描执行
 
@@ -39,7 +39,7 @@ python .\pppXray.py -r target.txt
 
 
 
-## 4.其他用法参考
+## 4.其他与语法参考
 
 [Cl0udG0d/pppXray: Xray批量化自动扫描 (github.com)](https://github.com/Cl0udG0d/pppXray)
 

@@ -184,7 +184,6 @@ basic-crawler:
     - '*google*'
     - '*github*'
     - '*.gov.cn'
-    - '*.edu.cn'
     - '*chaitin*'
     - '*.xray.cool'
     port_allowed: []                    # 允许访问的端口, 支持的格式如: 80、80-85
